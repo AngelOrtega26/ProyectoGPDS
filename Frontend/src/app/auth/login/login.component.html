@@ -1,0 +1,35 @@
+<div class="container-fluid vh-100">
+    <div class="row m-5">
+        <p-toast></p-toast>
+        <div class="col-12 text-center">
+            <h1>Iniciar sesión</h1>
+        </div>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mt-3">
+                <div class="mb-3">
+                    <input placeholder="Correo Electrónico" id="email" type="email" pInputText class="w-25" [(ngModel)]="email" name="email" required />
+                </div>
+                <div>
+                    <input placeholder="Contraseña" id="password" type="password" pInputText class="w-25" [(ngModel)]="password" name="password" required />
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 mt-5">
+                <div>
+                    <button class="btn btn-secondary w-25">Iniciar sesión</button>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 mt-5">
+                <button class="btn btn-success w-25">Registrate aquí</button>
+            </div>
+            <div class="col-12 mt-2">
+                <button class="btn btn-info w-25" type="submit">Recuperar contraseña</button>
+            </div>
+        </div>
+    </form>
+</div>

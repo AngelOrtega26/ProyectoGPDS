@@ -1,0 +1,37 @@
+<div class="container-fluid vh-100">
+    <div class="row m-5">
+        <div class="col-12 text-center">
+            <h1>Registro</h1>
+        </div>
+    </div>
+    <form (ngSubmit)="onRegister()">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mt-3">
+                <div class="mb-3">
+                    <input placeholder="Nombre" id="firstName" type="text" pInputText class="w-25" [(ngModel)]="firstName" name="firstName" required />
+                </div>
+                <div class="mb-3">
+                    <input placeholder="Apellido" id="lastName" type="text" pInputText class="w-25" [(ngModel)]="lastName" name="lastName" required />
+                </div>
+                <div class="mb-3">
+                    <input placeholder="Correo Electrónico" id="email" type="email" pInputText class="w-25" [(ngModel)]="email" name="email" required />
+                </div>
+                <div>
+                    <input placeholder="Contraseña" id="password" type="password" pInputText class="w-25" [(ngModel)]="password" name="password" required />
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 mt-5">
+                <div>
+                    <button class="btn btn-primary w-25" type="submit">Registrarse</button>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-12 mt-5">
+                <button class="btn btn-secondary w-25" (click)="goToLogin()">Regresar al inicio de sesión</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -2,7 +2,7 @@
 
 ### API de NodeJS con arquitectura en capas
 
-#### *Modulos usados en esta API:*
+#### *DEPENDENCIAS:*
 - express
 ```
 npm install express
@@ -19,7 +19,27 @@ npm install dotenv
 ```
 npm install --save-dev nodemon
 ```
+- cors (para permitir las solicitudes desde el Frontend)
+```
+npm install cors
+```
 ---
 # ***FRONTEND***
 
 ### Proyecto de AngularJS que realizará las peticiones al API
+
+### *DEPENDENCIAS*
+
+<!-- - PrimeNG (Versión especifica para la versión de Angular usada para el proyecto)
+```
+npm install primeng@16.9.0
+```
+- PrimeICONS
+```
+npm install primeicons
+``` -->
+
+- Bootstrap
+```
+ng add @ng-bootstrap/ng-bootstrap
+```

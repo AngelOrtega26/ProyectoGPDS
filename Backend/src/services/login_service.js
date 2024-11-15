@@ -8,10 +8,13 @@ const authenticateUser = async (datos) => {
             'SELECT * FROM usuarios WHERE correo = $1 AND contrasena = $2',
             [correo, contrasena]
         );
-        const existe = user.rows.length > 0 ? true : false;
+        const existe = user.rows.length > 0;
         return existe;
     } catch (error) {
         throw new Error('Error al autenticarse: ' + error.message);
     }
-}
-    
+};
+
+module.exports = {
+    authenticateUser
+};
