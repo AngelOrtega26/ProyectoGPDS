@@ -1,0 +1,70 @@
+services:
+
+  postgres_db:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./dbfiles:/docker-entrypoint-initdb.d
+      - ./postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: hola
+      POSTGRES_DB: db_proyecto_gpds
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"         # Limitar a 50% de un CPU
+          memory: "512M"      # Limitar a 512 MB de RAM
+        reservations:
+          memory: "256M"      # Reservar 256 MB de RAM
+
+  adminer:
+    container_name: adminer
+    image: adminer:latest
+    restart: always
+    depends_on:
+      - postgres_db
+    ports:
+      - 9090:8080
+    deploy:
+      resources:
+        limits:
+          cpus: "0.2"         # Limitar a 20% de un CPU
+          memory: "128M"      # Limitar a 128 MB de RAM
+        reservations:
+          memory: "64M"       # Reservar 64 MB de RAM
+
+  backend:
+    build:
+      context: ./backend
+    container_name: backend
+    depends_on:
+      - postgres_db
+    ports:
+      - 8080:3000
+    deploy:
+      resources:
+        limits:
+          cpus: "0.7"         # Limitar a 70% de un CPU
+          memory: "768M"      # Limitar a 768 MB de RAM
+        reservations:
+          memory: "512M"      # Reservar 512 MB de RAM
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: frontend
+    depends_on:
+      - quiniela-back
+    ports:
+      - 80:80
+    deploy:
+      resources:
+        limits:
+          cpus: "0.4"         # Limitar a 40% de un CPU
+          memory: "512M"      # Limitar a 512 MB de RAM
+        reservations:
+          memory: "256M"      # Reservar 256 MB de RAM

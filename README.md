@@ -43,3 +43,31 @@ npm install primeicons
 ```
 ng add @ng-bootstrap/ng-bootstrap
 ```
+- Dependencias de angular
+```
+npm i
+```
+- PRIMENG
+```
+npm install primeng@16.9.0
+```
+
+- PRIMEFLEX
+```
+npm install primeflex
+```
+
+- PRIMEICONS
+```
+npm install primeicons
+```
+### Asi deberían quedar los styles en el angular.json:
+```
+"styles": [
+    "src/styles.css",
+    "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+    "node_modules/primeng/resources/primeng.min.css",
+    "node_modules/primeflex/primeflex.css",
+    "node_modules/primeicons/primeicons.css"
+]
+```
