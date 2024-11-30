@@ -39,7 +39,7 @@ services:
 
   backend:
     build:
-      context: ./backend
+      context: ./Backend
     container_name: backend
     depends_on:
       - postgres_db
@@ -55,12 +55,12 @@ services:
 
   frontend:
     build:
-      context: ./frontend
+      context: ./Frontend
     container_name: frontend
     depends_on:
-      - quiniela-back
+      - backend
     ports:
-      - 80:80
+      - 81:81
     deploy:
       resources:
         limits:

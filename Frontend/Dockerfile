@@ -12,7 +12,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY mime.types /etc/nginx/mime.types
 
 # Copiar el contenido del directorio sistema-ventas-front
-COPY dist/proyecto-nad /usr/share/nginx/html
+COPY dist/frontend /usr/share/nginx/html
 
 # Exponer el puerto 80
 EXPOSE 80

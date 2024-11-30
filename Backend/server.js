@@ -15,7 +15,7 @@ connectDB();
 
 // Middleware para CORS
 const corsOptions = {
-    origin: 'http://localhost:4200', // Cambia esto al dominio de tu frontend en producción
+    origin: 'http://localhost:81', // Cambia esto al dominio de tu frontend en producción
     methods: 'GET,POST,PUT,DELETE', // Métodos HTTP permitidos
     allowedHeaders: 'Content-Type,Authorization', // Encabezados permitidos
 };

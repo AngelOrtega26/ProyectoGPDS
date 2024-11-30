@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   
-  private readonly apiUrl = 'http://localhost:3000/api'; // Ajusta la URL a tu backend
+  private readonly apiUrl = 'http://localhost:8080/api'; // Ajusta la URL a tu backend
 
   constructor(private http: HttpClient, private router : Router) {}
 
